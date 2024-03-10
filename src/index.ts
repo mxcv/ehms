@@ -11,14 +11,14 @@ let holidayRequestRepository = repositoryFactory.createHolidayRequestRepository(
 let holidayRulesRepository = repositoryFactory.createHolidayRulesRepository();
 let actions = [addEmployee, viewEmployees, submitHolidayRequest, viewHolidayRequests, validateHolidayRequests]
 
+dayjs.extend(utc);
 holidayRulesRepository.set({
     maxConsecutiveDays: 20,
     blackoutPeriods: [
-        { from: dayjs('2024-03-01'), to: dayjs('2024-03-31') },
-        { from: dayjs('2024-09-01'), to: dayjs('2024-09-01') }
+        { from: dayjs.utc('2024-03-01'), to: dayjs.utc('2024-03-31') },
+        { from: dayjs.utc('2024-09-01'), to: dayjs.utc('2024-09-01') }
     ]
 })
-dayjs.extend(utc);
 displayMainMenu();
 
 function displayMainMenu() {
