@@ -69,7 +69,7 @@ function submitHolidayRequest() {
                 type: 'list',
                 name: 'employeeId',
                 message: 'Choose an employee',
-                choices: employees.map(e => ({ value: e.id,nname: e.name }))
+                choices: employees.map(e => ({ value: e.id, name: e.name }))
             },
             { name: 'startDate', message: 'Start date (yyyy-mm-dd):' },
             { name: 'endDate', message: 'End date (yyyy-mm-dd):' }
